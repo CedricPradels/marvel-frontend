@@ -1,0 +1,6 @@
+.character .results {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 50px;
+  justify-content: center;
+}

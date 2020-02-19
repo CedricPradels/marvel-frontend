@@ -1,0 +1,33 @@
+.comicCard {
+  width: 400px;
+  height: 200px;
+  background-color: #141414;
+  margin: 10px;
+  color: white;
+}
+
+.comicCard:hover {
+  background-color: red;
+}
+
+.comicCard .container {
+  display: flex;
+}
+
+.comicCard .container .image {
+  flex: 1;
+  height: 200px;
+  background-position: center;
+  background-size: cover;
+}
+
+.comicCard .container .informations {
+  padding: 10px;
+  flex: 2;
+}
+
+.comicCard .container .informations h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}

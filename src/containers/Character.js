@@ -2,8 +2,14 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
+// CSS
+import "./Character.css";
+
 // AXIOS
 import axios from "axios";
+
+// COMPONENT
+import ComicCard from "../components/ComicCard";
 
 const Character = props => {
   const { id } = useParams();
@@ -24,19 +30,11 @@ const Character = props => {
   }, []);
 
   return (
-    <main>
-      <ul>
+    <main className="character">
+      <ul className="results">
         {!isLoading &&
           comics.map((comic, index) => {
-            return (
-              <li key={index}>
-                <h3>{comic.title}</h3>
-                <img
-                  src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
-                  alt={`${comic.title}`}
-                />
-              </li>
-            );
+            return <ComicCard key={index} {...comic}></ComicCard>;
           })}
       </ul>
     </main>
