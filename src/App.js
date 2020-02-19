@@ -10,6 +10,7 @@ import Header from "./components/Header";
 
 // CONTAINERS
 import Characters from "./containers/Characters";
+import Character from "./containers/Character";
 
 const App = () => {
   return (
@@ -17,7 +18,10 @@ const App = () => {
       <Router>
         <Header />
         <Switch>
-          <Route to="/">
+          <Route path="/:id">
+            <Character></Character>
+          </Route>
+          <Route path="/">
             <Characters></Characters>
           </Route>
         </Switch>
