@@ -11,6 +11,7 @@ import Header from "./components/Header";
 // CONTAINERS
 import Characters from "./containers/Characters";
 import Character from "./containers/Character";
+import Comics from "./containers/Comics";
 
 const App = () => {
   return (
@@ -24,7 +25,9 @@ const App = () => {
           <Route path="/characters">
             <Characters></Characters>
           </Route>
-          <Route path="/comics"></Route>
+          <Route path="/comics">
+            <Comics></Comics>
+          </Route>
           <Route path="/favorites"></Route>
           <Route path="/"></Route>
         </Switch>
