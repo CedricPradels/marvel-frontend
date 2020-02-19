@@ -39,7 +39,7 @@ const Characters = () => {
         {!isLoading &&
           results.map((result, index) => {
             return (
-              <Link to={`/${result.id}`} key={index}>
+              <Link to={`/characters/${result.id}`} key={index}>
                 <article>
                   <img
                     src={`${result.thumbnail.path}.${result.thumbnail.extension}`}

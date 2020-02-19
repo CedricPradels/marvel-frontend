@@ -18,12 +18,15 @@ const App = () => {
       <Router>
         <Header />
         <Switch>
-          <Route path="/:id">
+          <Route path="/characters/:id">
             <Character></Character>
           </Route>
-          <Route path="/">
+          <Route path="/characters">
             <Characters></Characters>
           </Route>
+          <Route path="/comics"></Route>
+          <Route path="/favorites"></Route>
+          <Route path="/"></Route>
         </Switch>
       </Router>
     </>

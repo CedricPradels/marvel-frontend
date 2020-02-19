@@ -1,5 +1,8 @@
 // REACT
 import React from "react";
+import { Link } from "react-router-dom";
+
+// CSS
 import "./Header.css";
 
 // IMAGES
@@ -10,9 +13,15 @@ const Header = () => {
     <header>
       <img src={logoMarvel} alt="logo Marvel" />
       <ul>
-        <li>Personnages</li>
-        <li>Commics</li>
-        <li>Favoris</li>
+        <li>
+          <Link to="/characters">Personnages</Link>
+        </li>
+        <li>
+          <Link to="/comics">Comics</Link>
+        </li>
+        <li>
+          <Link to="/favorites">Favoris</Link>
+        </li>
       </ul>
     </header>
   );
