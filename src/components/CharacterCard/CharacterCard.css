@@ -1,0 +1,38 @@
+.characterCard {
+  width: 400px;
+  height: 200px;
+  background-color: #141414;
+  margin: 10px;
+  color: white;
+}
+
+.characterCard:hover {
+  background-color: red;
+}
+
+.characterCard .container {
+  display: flex;
+}
+
+.characterCard .container .image {
+  flex: 1;
+  height: 200px;
+  background-position: center;
+  background-size: cover;
+}
+
+.characterCard .container .informations {
+  padding: 10px;
+  flex: 2;
+}
+
+.characterCard .container .informations h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.characterCard .container .informations p {
+  font-size: 1rem;
+  font-weight: 400;
+}

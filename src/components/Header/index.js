@@ -11,7 +11,6 @@ import logoMarvel from "../../images/marvel_logo.png";
 const Header = () => {
   return (
     <header>
-      <img src={logoMarvel} alt="logo Marvel" />
       <ul>
         <li>
           <Link to="/characters">Personnages</Link>
@@ -23,6 +22,9 @@ const Header = () => {
           <Link to="/favorites">Favoris</Link>
         </li>
       </ul>
+      <img src={logoMarvel} alt="logo Marvel" />
+
+      <div>Login</div>
     </header>
   );
 };
