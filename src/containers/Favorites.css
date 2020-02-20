@@ -1,0 +1,17 @@
+.favorites {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 300px;
+}
+
+.favorites .results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.favorites h2 {
+  font-weight: 700;
+  font-size: 2rem;
+}

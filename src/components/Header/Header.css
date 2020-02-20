@@ -20,3 +20,11 @@ header ul li {
 header img {
   height: 30px;
 }
+
+header .login:hover {
+  cursor: pointer;
+}
+
+header ul .isSelected {
+  background-color: red;
+}

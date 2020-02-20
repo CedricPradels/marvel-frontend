@@ -5,6 +5,7 @@
   height: 100vh;
   display: flex;
   justify-content: center;
+  z-index: 99999999999;
   align-items: center;
   top: 0;
   left: 0;

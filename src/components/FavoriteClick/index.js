@@ -1,17 +1,39 @@
 // REACT
 import React from "react";
 
+// AXIOS
+import axios from "axios";
+
+// COOKIES
+import Cookies from "js-cookie";
+
 // CSS
 import "./FavoriteClick.css";
 
 const FavoriteClick = props => {
+  const token = Cookies.get("marvelToken");
+
   const { type, id } = props;
 
   return (
     <div
-      className="favorites"
-      onClick={() => {
-        alert(type);
+      className="favoritesClick"
+      onClick={async () => {
+        const response = await axios.post(
+          "http://localhost:4000/user/addfavorite",
+          {
+            type: type,
+            id: id
+          },
+          {
+            headers: {
+              Authorization: `Bearer ${token}`
+            }
+          }
+        );
+        console.log("ahah");
+
+        console.log(response.data);
       }}
     ></div>
   );

@@ -4,10 +4,14 @@ import React from "react";
 //CSS
 import "./ComicCard.css";
 
+// COMPONENT
+import FavoriteClick from "../FavoriteClick";
+
 const ComicCard = props => {
-  const { thumbnail, title, description } = props;
+  const { thumbnail, title, description, id } = props;
   return (
     <li className="comicCard">
+      <FavoriteClick id={id} type="comics"></FavoriteClick>
       <div className="container">
         <div
           className="image"

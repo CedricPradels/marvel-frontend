@@ -46,6 +46,7 @@ const Header = () => {
       </ul>
 
       <div
+        className="login"
         onClick={() => {
           if (isLoged) {
             Cookies.remove("marvelToken");
