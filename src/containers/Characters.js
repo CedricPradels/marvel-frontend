@@ -37,18 +37,6 @@ const Characters = () => {
     getResults();
   }, [actualPage, searchRequest]);
 
-  useEffect(() => {
-    const getResults = async () => {
-      const response = await axios.get(
-        `http://localhost:4000/characters?page=${actualPage}&limit=${resultsPerPage}`
-      );
-      setResults(response.data.datas);
-      setResultsCount(response.data.total);
-      setIsLoading(false);
-    };
-    getResults();
-  }, []);
-
   return (
     <main className="characters">
       <form

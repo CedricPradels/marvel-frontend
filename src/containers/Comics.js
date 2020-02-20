@@ -9,36 +9,41 @@ import axios from "axios";
 
 // COMPONENT
 import ComicCard from "../components/ComicCard";
+import Paginate from "../components/Paginate";
 
 const Comics = () => {
+  // STATES
   const [search, setSearch] = useState("");
+  const [searchRequest, setSearchRequest] = useState("");
   const [results, setResults] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  const getResults = async () => {
-    const response = await axios.get(`http://localhost:4000/comics`);
-    console.log(response.data.datas);
-    console.log(response.data.total);
-    setResults(response.data.datas);
-    setIsLoading(false);
-  };
+  // TMP PAGINATE
+  const [resultsPerPage, setResultsPerPage] = useState(100);
+  const [actualPage, setActualPage] = useState(1);
+  const [resultsCount, setResultsCount] = useState(0);
 
   useEffect(() => {
+    const getResults = async () => {
+      const response = await axios.get(
+        `http://localhost:4000/comics?title=${search}&page=${actualPage}&limit=${resultsPerPage}`
+      );
+
+      setResults(response.data.datas);
+      setResultsCount(response.data.total);
+      setIsLoading(false);
+    };
     getResults();
-  }, []);
+  }, [actualPage, searchRequest]);
 
   return (
     <main className="comics">
       <form
         className="formSearch"
-        onSubmit={async event => {
+        onSubmit={event => {
           event.preventDefault();
-          const response = await axios.get(
-            `http://localhost:4000/comics?title=${search}`
-          );
-          setResults(response.data);
-          console.log(response.data);
-          setIsLoading(false);
+
+          setSearchRequest(search);
         }}
       >
         <input
@@ -59,6 +64,9 @@ const Comics = () => {
             return <ComicCard key={index} {...comic}></ComicCard>;
           })}
       </ul>
+      <Paginate
+        states={{ setActualPage, resultsCount, resultsPerPage }}
+      ></Paginate>
     </main>
   );
 };
