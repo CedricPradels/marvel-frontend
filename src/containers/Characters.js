@@ -28,7 +28,7 @@ const Characters = () => {
   useEffect(() => {
     const getResults = async () => {
       const response = await axios.get(
-        `http://localhost:4000/characters?name=${searchRequest}&page=${actualPage}&limit=${resultsPerPage}`
+        `https://marvel-ced.herokuapp.com/characters?name=${searchRequest}&page=${actualPage}&limit=${resultsPerPage}`
       );
       setResults(response.data.datas);
       setResultsCount(response.data.total);

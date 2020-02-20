@@ -24,11 +24,14 @@ const Favorites = () => {
 
   useEffect(() => {
     const getFavorites = async () => {
-      const response = await axios.get("http://localhost:4000/user/favorites", {
-        headers: {
-          Authorization: `Bearer ${token}`
+      const response = await axios.get(
+        "https://marvel-ced.herokuapp.com/user/favorites",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
         }
-      });
+      );
 
       setFavoritesCharacters(response.data.characters);
       setFavoritesComics(response.data.comics);
