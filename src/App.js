@@ -12,6 +12,7 @@ import Header from "./components/Header";
 import Characters from "./containers/Characters";
 import Character from "./containers/Character";
 import Comics from "./containers/Comics";
+import Signup from "./containers/Signup";
 
 const App = () => {
   return (
@@ -29,6 +30,9 @@ const App = () => {
             <Comics></Comics>
           </Route>
           <Route path="/favorites"></Route>
+          <Route path="/signup">
+            <Signup></Signup>
+          </Route>
           <Route path="/"></Route>
         </Switch>
       </Router>

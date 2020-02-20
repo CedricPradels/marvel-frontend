@@ -2,13 +2,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-//CSS
+// CSS
 import "./CharacterCard.css";
+
+// COMPONENT
+import FavoriteClick from "../FavoriteClick";
 
 const CharacterCard = props => {
   const { thumbnail, name, id, description } = props;
   return (
     <li className="characterCard">
+      <FavoriteClick id={id} type="characters"></FavoriteClick>
       <Link to={`/characters/${id}`}>
         <div className="container">
           <div
