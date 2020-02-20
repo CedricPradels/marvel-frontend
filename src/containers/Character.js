@@ -13,13 +13,11 @@ import ComicCard from "../components/ComicCard";
 
 const Character = props => {
   const { id } = useParams();
-  console.log(id);
   // STATES
   const [comics, setComics] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   const loadComics = async () => {
-    console.log("ahah");
     const response = await axios.get(`http://localhost:4000/characters/${id}`);
     setComics(response.data);
     setIsLoading(false);

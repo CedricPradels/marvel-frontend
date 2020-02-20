@@ -1,17 +1,36 @@
 // REACT
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+
+// CSS
+import "./Comics.css";
 
 // AXIOS
 import axios from "axios";
+
+// COMPONENT
+import ComicCard from "../components/ComicCard";
 
 const Comics = () => {
   const [search, setSearch] = useState("");
   const [results, setResults] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  const getResults = async () => {
+    const response = await axios.get(`http://localhost:4000/comics`);
+    console.log(response.data.datas);
+    console.log(response.data.total);
+    setResults(response.data.datas);
+    setIsLoading(false);
+  };
+
+  useEffect(() => {
+    getResults();
+  }, []);
+
   return (
-    <main>
+    <main className="comics">
       <form
+        className="formSearch"
         onSubmit={async event => {
           event.preventDefault();
           const response = await axios.get(
@@ -34,21 +53,12 @@ const Comics = () => {
         <button type="submit">Rechercher</button>
       </form>
 
-      <section className="results">
+      <ul className="results">
         {!isLoading &&
-          results.map((result, index) => {
-            return (
-              <article>
-                <img
-                  src={`${result.thumbnail.path}.${result.thumbnail.extension}`}
-                  alt={result.name}
-                />
-                <h2>{result.name}</h2>
-                <p>{result.description}</p>
-              </article>
-            );
+          results.map((comic, index) => {
+            return <ComicCard key={index} {...comic}></ComicCard>;
           })}
-      </section>
+      </ul>
     </main>
   );
 };

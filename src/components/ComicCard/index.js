@@ -5,7 +5,7 @@ import React from "react";
 import "./ComicCard.css";
 
 const ComicCard = props => {
-  const { thumbnail, title } = props;
+  const { thumbnail, title, description } = props;
   return (
     <li className="comicCard">
       <div className="container">
@@ -17,6 +17,7 @@ const ComicCard = props => {
         ></div>
         <div className="informations">
           <h2>{title}</h2>
+          <p>{description}</p>
         </div>
       </div>
     </li>

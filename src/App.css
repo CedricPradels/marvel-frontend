@@ -23,3 +23,23 @@ a:hover {
 a:active {
   color: inherit;
 }
+
+.formSearch {
+  background-color: red;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.formSearch input {
+  padding: 5px;
+  border: none;
+  background-color: #1e1e1e;
+  color: white;
+  font-size: 1.5rem;
+  width: 400px;
+  text-align: center;
+}
+
+.formSearch button {
+}

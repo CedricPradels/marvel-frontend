@@ -1,0 +1,11 @@
+.paginate {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #141414;
+  padding: 20px 0;
+}
+
+.paginate li {
+  margin: 0 10px;
+}
