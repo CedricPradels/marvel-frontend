@@ -10,6 +10,7 @@ import axios from "axios";
 // COMPONENT
 import ComicCard from "../components/ComicCard";
 import Paginate from "../components/Paginate";
+import IsLoading from "../components/IsLoading";
 
 const Comics = () => {
   // STATES
@@ -59,10 +60,13 @@ const Comics = () => {
       </form>
 
       <ul className="results">
-        {!isLoading &&
+        {!isLoading ? (
           results.map((comic, index) => {
             return <ComicCard key={index} {...comic}></ComicCard>;
-          })}
+          })
+        ) : (
+          <IsLoading></IsLoading>
+        )}
       </ul>
       <Paginate
         states={{ setActualPage, resultsCount, resultsPerPage }}

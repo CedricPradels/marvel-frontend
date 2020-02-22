@@ -8,6 +8,7 @@ import axios from "axios";
 // COMPONENTS
 import CharacterCard from "../components/CharacterCard";
 import Paginate from "../components/Paginate";
+import IsLoading from "../components/IsLoading";
 
 // CSS
 import "./Characters.css";
@@ -58,12 +59,14 @@ const Characters = () => {
         ></input>
         <button type="submit">Rechercher</button>
       </form>
-
       <ul className="results">
-        {!isLoading &&
+        {!isLoading ? (
           results.map((result, index) => {
             return <CharacterCard key={index} {...result}></CharacterCard>;
-          })}
+          })
+        ) : (
+          <IsLoading></IsLoading>
+        )}
       </ul>
       <Paginate
         states={{ setActualPage, resultsCount, resultsPerPage }}

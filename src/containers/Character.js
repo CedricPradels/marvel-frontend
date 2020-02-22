@@ -11,6 +11,7 @@ import axios from "axios";
 // COMPONENT
 import ComicCard from "../components/ComicCard";
 import Paginate from "../components/Paginate";
+import IsLoading from "../components/IsLoading";
 
 const Character = props => {
   const { id } = useParams();
@@ -39,10 +40,13 @@ const Character = props => {
   return (
     <main className="character">
       <ul className="results">
-        {!isLoading &&
+        {!isLoading ? (
           comics.map((comic, index) => {
             return <ComicCard key={index} {...comic}></ComicCard>;
-          })}
+          })
+        ) : (
+          <IsLoading></IsLoading>
+        )}
       </ul>
       <Paginate
         states={{ setActualPage, resultsCount, resultsPerPage }}

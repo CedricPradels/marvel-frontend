@@ -13,6 +13,7 @@ import Cookies from "js-cookie";
 // COMPONENTS
 import CharacterCard from "../components/CharacterCard";
 import ComicCard from "../components/ComicCard";
+import IsLoading from "../components/IsLoading";
 
 const Favorites = () => {
   // STATES
@@ -42,22 +43,26 @@ const Favorites = () => {
 
   return (
     <main className="favorites">
-      {!isLoading && favoritesCharacters.length !== 0 && <h2>Characters</h2>}
-      <ul className="results">
-        {!isLoading &&
-          favoritesCharacters.map((character, index) => {
-            console.log("chars");
-            return <CharacterCard key={index} {...character}></CharacterCard>;
-          })}
-      </ul>
-      {!isLoading && favoritesComics.length !== 0 && <h2>Comics</h2>}
-      <ul className="results">
-        {!isLoading &&
-          favoritesComics.map((comic, index) => {
-            console.log("comics");
-            return <ComicCard key={index} {...comic}></ComicCard>;
-          })}
-      </ul>
+      {!isLoading ? (
+        <section>
+          {favoritesCharacters.length !== 0 && <h2>Characters</h2>}
+          <ul className="results">
+            {favoritesCharacters.map((character, index) => {
+              console.log("chars");
+              return <CharacterCard key={index} {...character}></CharacterCard>;
+            })}
+          </ul>
+          {favoritesComics.length !== 0 && <h2>Comics</h2>}
+          <ul className="results">
+            {favoritesComics.map((comic, index) => {
+              console.log("comics");
+              return <ComicCard key={index} {...comic}></ComicCard>;
+            })}
+          </ul>
+        </section>
+      ) : (
+        <IsLoading></IsLoading>
+      )}
     </main>
   );
 };

@@ -1,0 +1,10 @@
+.isLoading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 55vh;
+}
+
+.isLoading img {
+  height: 50vh;
+}
