@@ -34,7 +34,7 @@ const Signup = () => {
             const token = response.data.token;
 
             if (token) {
-              Cookies.set("marvelToken", token);
+              Cookies.remove("marvelToken");
               history.push("/characters");
             } else {
               setPassword("");
