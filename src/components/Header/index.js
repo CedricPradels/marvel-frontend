@@ -16,6 +16,7 @@ import ModaleLogin from "../ModaleLogin";
 import { useEffect } from "react";
 
 const Header = () => {
+  const [selectedHeader, setSelectedHeader] = useState("characters");
   const token = Cookies.get("marvelToken");
 
   const [isLoged, setIsLoged] = useState(token);
@@ -34,13 +35,28 @@ const Header = () => {
       )}
       <img src={logoMarvel} alt="logo Marvel" />
       <ul>
-        <li>
+        <li
+          className={selectedHeader === "characters" ? "isSelected" : ""}
+          onClick={() => {
+            setSelectedHeader("characters");
+          }}
+        >
           <Link to="/characters">Personnages</Link>
         </li>
-        <li>
+        <li
+          className={selectedHeader === "comics" ? "isSelected" : ""}
+          onClick={() => {
+            setSelectedHeader("comics");
+          }}
+        >
           <Link to="/comics">Comics</Link>
         </li>
-        <li>
+        <li
+          className={selectedHeader === "favorites" ? "isSelected" : ""}
+          onClick={() => {
+            setSelectedHeader("favorites");
+          }}
+        >
           <Link to="/favorites">Favoris</Link>
         </li>
       </ul>
