@@ -26,7 +26,7 @@ const Comics = () => {
   useEffect(() => {
     const getResults = async () => {
       const response = await axios.get(
-        `https://marvel-ced.herokuapp.com/comics?title=${search}&page=${actualPage}&limit=${resultsPerPage}`
+        `${process.env.REACT_APP_BACKENT_URL}/comics?title=${search}&page=${actualPage}&limit=${resultsPerPage}`
       );
 
       setResults(response.data.datas);

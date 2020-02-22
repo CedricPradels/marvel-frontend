@@ -25,7 +25,7 @@ const Favorites = () => {
   useEffect(() => {
     const getFavorites = async () => {
       const response = await axios.get(
-        "https://marvel-ced.herokuapp.com/user/favorites",
+        `${process.env.REACT_APP_BACKENT_URL}/user/favorites`,
         {
           headers: {
             Authorization: `Bearer ${token}`

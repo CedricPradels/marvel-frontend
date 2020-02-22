@@ -20,7 +20,7 @@ const FavoriteClick = props => {
       className="favoritesClick"
       onClick={async () => {
         const response = await axios.post(
-          "https://marvel-ced.herokuapp.com/user/addfavorite",
+          `${process.env.REACT_APP_BACKENT_URL}/user/addfavorite`,
           {
             type: type,
             id: id

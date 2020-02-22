@@ -26,7 +26,7 @@ const Character = props => {
   useEffect(() => {
     const loadComics = async () => {
       const response = await axios.get(
-        `https://marvel-ced.herokuapp.com/characters/${id}?page=${actualPage}&limit=${resultsPerPage}`
+        `${process.env.REACT_APP_BACKENT_URL}/characters/${id}?page=${actualPage}&limit=${resultsPerPage}`
       );
       setComics(response.data.datas);
       setResultsCount(response.data.total);
