@@ -7,6 +7,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0 50px;
+  height: 65px;
 }
 
 header ul {
@@ -19,7 +20,7 @@ header ul li {
 }
 
 header img {
-  height: 30px;
+  height: 65px;
 }
 
 header .login:hover {
@@ -27,7 +28,7 @@ header .login:hover {
 }
 
 header ul .isSelected {
-  background-color: red;
+  background-color: #ed161f;
   color: #1f1f1f;
   font-weight: 500;
 }

@@ -1,9 +1,19 @@
 .favoritesClick {
-  width: 20px;
-  height: 20px;
+  width: 35px;
+  height: 35px;
   position: absolute;
   top: 0;
   left: 0;
-  background-color: yellow;
-  border: red;
+}
+
+.favoritesClick .icon {
+  height: 100%;
+  width: 100%;
+  color: var(--color-black);
+  fill: var(--color-white);
+}
+
+.favoritesClick .icon:hover {
+  fill: var(--color-red);
+  cursor: pointer;
 }

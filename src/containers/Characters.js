@@ -28,8 +28,9 @@ const Characters = () => {
 
   useEffect(() => {
     const getResults = async () => {
+      setIsLoading(true);
       const response = await axios.get(
-        `${process.env.REACT_APP_BACKENT_URL}/characters?name=${searchRequest}&page=${actualPage}&limit=${resultsPerPage}`
+        `${process.env.REACT_APP_BACKEND_URL}/characters?name=${searchRequest}&page=${actualPage}&limit=${resultsPerPage}`
       );
       setResults(response.data.datas);
       setResultsCount(response.data.total);

@@ -26,8 +26,9 @@ const Comics = () => {
 
   useEffect(() => {
     const getResults = async () => {
+      setIsLoading(true);
       const response = await axios.get(
-        `${process.env.REACT_APP_BACKENT_URL}/comics?title=${search}&page=${actualPage}&limit=${resultsPerPage}`
+        `${process.env.REACT_APP_BACKEND_URL}/comics?title=${search}&page=${actualPage}&limit=${resultsPerPage}`
       );
 
       setResults(response.data.datas);

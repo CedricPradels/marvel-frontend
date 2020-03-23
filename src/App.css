@@ -1,3 +1,9 @@
+:root {
+  --color-red: #ed161f;
+  --color-black: #202020;
+  --color-white: #ffffff;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -25,7 +31,7 @@ a:active {
 }
 
 .formSearch {
-  background-color: red;
+  background-color: #ed161f;
   padding: 10px 0;
   display: flex;
   justify-content: center;

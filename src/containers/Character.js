@@ -27,7 +27,7 @@ const Character = props => {
   useEffect(() => {
     const loadComics = async () => {
       const response = await axios.get(
-        `${process.env.REACT_APP_BACKENT_URL}/characters/${id}?page=${actualPage}&limit=${resultsPerPage}`
+        `${process.env.REACT_APP_BACKEND_URL}/characters/${id}?page=${actualPage}&limit=${resultsPerPage}`
       );
       setComics(response.data.datas);
       setResultsCount(response.data.total);

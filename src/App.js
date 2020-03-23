@@ -22,22 +22,22 @@ const App = () => {
         <Header />
         <Switch>
           <Route path="/characters/:id">
-            <Character></Character>
+            <Character />
           </Route>
           <Route path="/characters">
-            <Characters></Characters>
+            <Characters />
           </Route>
           <Route path="/comics">
-            <Comics></Comics>
+            <Comics />
           </Route>
           <Route path="/favorites">
-            <Favorites></Favorites>
+            <Favorites />
           </Route>
           <Route path="/signup">
-            <Signup></Signup>
+            <Signup />
           </Route>
           <Route path="/">
-            <Characters></Characters>
+            <Characters />
           </Route>
         </Switch>
       </Router>

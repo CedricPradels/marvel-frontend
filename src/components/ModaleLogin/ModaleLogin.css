@@ -12,14 +12,19 @@
   flex-direction: column;
 }
 
+.modale .modalWrapper {
+  background-color: var(--color-black);
+  border-radius: 10px;
+  border: var(--color-white) 5px solid;
+}
+
 .modale form {
-  background-color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 30px;
   width: 500px;
-  color: black;
+  color: var(--color-white);
 }
 
 .modale h2 {
@@ -39,6 +44,6 @@
 
 .modale button {
   padding: 10px;
-  background-color: #202020;
-  color: white;
+  background-color: var(--color-red);
+  color: var(--color-white);
 }

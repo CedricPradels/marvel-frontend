@@ -1,18 +1,18 @@
 .characterCard {
   width: 400px;
   height: 200px;
-  background-color: #141414;
   margin: 10px;
-  color: white;
   position: relative;
-}
-
-.characterCard:hover {
-  background-color: red;
 }
 
 .characterCard .container {
   display: flex;
+  align-items: center;
+}
+
+.characterCard .container:hover {
+  filter: drop-shadow(2px 2px 2px var(--color-red))
+    drop-shadow(-2px -2px 2px var(--color-red));
 }
 
 .characterCard .container .image {
@@ -20,20 +20,28 @@
   height: 200px;
   background-position: center;
   background-size: cover;
+  border-radius: 5px;
 }
 
 .characterCard .container .informations {
   padding: 10px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   flex: 2;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  box-sizing: border-box;
 }
 
 .characterCard .container .informations h2 {
-  font-size: 1rem;
+  font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .characterCard .container .informations p {
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: 400;
 }

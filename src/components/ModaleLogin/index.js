@@ -21,58 +21,60 @@ const ModaleLogin = props => {
 
   return (
     <div className="modale">
-      <form
-        onSubmit={async event => {
-          event.preventDefault();
-          const response = await axios.post(
-            `${process.env.REACT_APP_BACKENT_URL}/user/login`,
-            {
-              email: email,
-              password: password
+      <div className="modalWrapper">
+        <form
+          onSubmit={async event => {
+            event.preventDefault();
+            const response = await axios.post(
+              `${process.env.REACT_APP_BACKEND_URL}/user/login`,
+              {
+                email: email,
+                password: password
+              }
+            );
+
+            const token = response.data.token;
+
+            if (token) {
+              Cookies.set("marvelToken", token);
+              setIsModaleDisplay(false);
+            } else {
+              setEmail("");
+              setPassword("");
             }
-          );
-
-          const token = response.data.token;
-
-          if (token) {
-            Cookies.set("marvelToken", token);
+          }}
+        >
+          <h2>Login</h2>
+          <label htmlFor="email">Adresse mail :</label>
+          <input
+            type="email"
+            id="email"
+            value={email}
+            onChange={event => {
+              setEmail(event.target.value);
+            }}
+          ></input>
+          <label htmlFor="password">Mot de passe</label>
+          <input
+            type="password"
+            id="password"
+            value={password}
+            onChange={event => {
+              setPassword(event.target.value);
+            }}
+          ></input>
+          <button type="submit">Se connecter</button>
+        </form>
+        <form
+          onSubmit={event => {
+            event.preventDefault();
             setIsModaleDisplay(false);
-          } else {
-            setEmail("");
-            setPassword("");
-          }
-        }}
-      >
-        <h2>Login</h2>
-        <label htmlFor="email">Adresse mail :</label>
-        <input
-          type="email"
-          id="email"
-          value={email}
-          onChange={event => {
-            setEmail(event.target.value);
+            history.push("/signup");
           }}
-        ></input>
-        <label htmlFor="password">Mot de passe</label>
-        <input
-          type="password"
-          id="password"
-          value={password}
-          onChange={event => {
-            setPassword(event.target.value);
-          }}
-        ></input>
-        <button type="submit">Se connecter</button>
-      </form>
-      <form
-        onSubmit={event => {
-          event.preventDefault();
-          setIsModaleDisplay(false);
-          history.push("/signup");
-        }}
-      >
-        <button>S'inscrire</button>
-      </form>
+        >
+          <button>S'inscrire</button>
+        </form>
+      </div>
     </div>
   );
 };

@@ -9,6 +9,7 @@ import Cookies from "js-cookie";
 
 // CSS
 import "./FavoriteClick.css";
+import { Star } from "react-feather";
 
 const FavoriteClick = props => {
   const token = Cookies.get("marvelToken");
@@ -18,9 +19,10 @@ const FavoriteClick = props => {
   return (
     <div
       className="favoritesClick"
-      onClick={async () => {
+      onClick={async event => {
+        event.stopPropagation();
         const response = await axios.post(
-          `${process.env.REACT_APP_BACKENT_URL}/user/addfavorite`,
+          `${process.env.REACT_APP_BACKEND_URL}/user/addfavorite`,
           {
             type: type,
             id: id
@@ -35,7 +37,9 @@ const FavoriteClick = props => {
 
         console.log(response.data);
       }}
-    ></div>
+    >
+      <Star className={"icon"} />
+    </div>
   );
 };
 

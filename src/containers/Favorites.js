@@ -26,7 +26,7 @@ const Favorites = () => {
   useEffect(() => {
     const getFavorites = async () => {
       const response = await axios.get(
-        `${process.env.REACT_APP_BACKENT_URL}/user/favorites`,
+        `${process.env.REACT_APP_BACKEND_URL}/user/favorites`,
         {
           headers: {
             Authorization: `Bearer ${token}`

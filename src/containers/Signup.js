@@ -25,7 +25,7 @@ const Signup = () => {
           event.preventDefault();
           if (password === confirm) {
             const response = await axios.post(
-              `${process.env.REACT_APP_BACKENT_URL}/user/signin`,
+              `${process.env.REACT_APP_BACKEND_URL}/user/signin`,
               {
                 email: email,
                 password: password
