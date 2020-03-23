@@ -4,15 +4,15 @@
 
 ### Display Marvel Chars
 
-![favorites](./documentation.characters.png)
+![characters](./documentation/characters.png)
 
 ### Display Marvel Comics
 
-![favorites](./documentation.comics.png)
+![comics](./documentation/comics.png)
 
 ### Display Favorites
 
-![favorites](./documentation.favorites.png)
+![favorites](./documentation/favorites.png)
 
 ## How to use
 
